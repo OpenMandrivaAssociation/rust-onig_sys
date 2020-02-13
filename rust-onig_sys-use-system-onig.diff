@@ -1,0 +1,12 @@
+diff -uNr onig_sys-68.2.0.orig/build.rs onig_sys-68.2.0/build.rs
+--- onig_sys-68.2.0.orig/build.rs	2018-07-29 18:29:19.000000000 +0200
++++ onig_sys-68.2.0/build.rs	2018-09-03 08:36:08.969948474 +0200
+@@ -139,7 +139,7 @@
+ 
+ pub fn main() {
+     let link_type = link_type_override();
+-    let require_pkg_config = env_var_bool("RUSTONIG_SYSTEM_LIBONIG").unwrap_or(false);
++    let require_pkg_config = env_var_bool("RUSTONIG_SYSTEM_LIBONIG").unwrap_or(true);
+ 
+     if require_pkg_config || link_type == Some(LinkType::Dynamic) {
+         let mut conf = Config::new();
